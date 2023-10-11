@@ -16,6 +16,7 @@ jobs:
     - name: Install Playwright
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+      id: test
       run: npx playwright test
       env:
         API_KEY: ${{ secrets.API_KEY }}
@@ -36,7 +37,7 @@ jobs:
       with:
           allure_results: ./allure-results
           allure_history: allure-history
-          keep_reports: 200
+          keep_reports: 10
       
     - name: Deploy report to Github pages
       if: always()
@@ -45,3 +46,10 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
+
+    - name: Microsoft Teams Notification
+      uses: skitionek/notify-microsoft-teams@master
+      if: always()
+      with:
+        webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
+        overwrite: "{title: `Automation Test Result : ${steps.test.outcome} Test Report :- https://robyrakesh.github.io/playwrigt-demo/`}"
