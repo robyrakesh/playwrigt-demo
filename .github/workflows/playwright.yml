@@ -32,6 +32,15 @@ jobs:
       with:
         name: allure-test-results
         path: allure-report/
+    - name: Deploy Allure Report
+      if: always()
+      uses: PavanMudigonda/html-reporter-github-pages@v1.2
+      with:
+        test_results: allure-results
+        allure_report_generate_flag: true
+        keep_reports: 20
+        gh_pages: gh_pages 
+        subfolder: docs
     - name: Publish JUnit Report
       uses: mikepenz/action-junit-report@v3
       if: always() # always run even if the previous step fails
