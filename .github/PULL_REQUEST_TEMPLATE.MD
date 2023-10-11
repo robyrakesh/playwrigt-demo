@@ -4,6 +4,7 @@ Please include a summary of the change and which issue is fixed. Please also inc
 
 Closes: #(issue)
 
+
 ## Type of change
 
 - [ ] Bug fix (non-breaking change which fixes an issue).
