@@ -1,0 +1,583 @@
+<testsuites id="" name="" tests="30" failures="3" skipped="2" errors="0" time="125.295275">
+<testsuite name="a11y.lighthouse.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.98" errors="0">
+<testcase name="Accessibility test" classname="a11y.lighthouse.spec.ts" time="12.98">
+<system-out>
+<![CDATA[
+
+[34m-------- playwright lighthouse audit reports --------[39m
+
+
+[92mperformance record is 85 and desired threshold was 50[39m
+[92maccessibility record is 68 and desired threshold was 50[39m
+[92mbest-practices record is 95 and desired threshold was 50[39m
+[92mseo record is 54 and desired threshold was 50[39m
+[92mpwa record is 0 and desired threshold was 0[39m
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api.basic.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.402" errors="0">
+<testcase name="get inventory" classname="api.basic.example.spec.ts" time="0.402">
+</testcase>
+</testsuite>
+<testsuite name="api.data.class.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="chromium" tests="2" failures="0" skipped="0" time="98.325" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.data.class.example.spec.ts" time="95.238">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-chromium-retry1/trace.zip]]
+
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-chromium-retry2/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-chromium-retry3/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login UI - Data From JSON" classname="api.data.class.example.spec.ts" time="3.087">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.class.example-Login-UI---Data-From-JSON-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api.data.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="chromium" tests="2" failures="1" skipped="0" time="91.722" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.data.example.spec.ts" time="4.581">
+<failure message="api.data.example.spec.ts:37:1 API SignUp | Login UI" type="FAILURE">
+<![CDATA[  [chromium] › api.data.example.spec.ts:37:1 › API SignUp | Login UI ───────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api.data.example-API-SignUp-Login-UI-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-chromium-retry2/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-chromium-retry3/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-chromium-retry1/trace.zip]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-chromium-retry2/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-chromium-retry3/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login UI - Data From JSON" classname="api.data.example.spec.ts" time="87.141">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.example-Login-UI---Data-From-JSON-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-Login-UI---Data-From-JSON-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-Login-UI---Data-From-JSON-chromium-retry1/trace.zip]]
+
+[[ATTACHMENT|../test-results/api.data.example-Login-UI---Data-From-JSON-chromium-retry2/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api.ui.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="chromium" tests="2" failures="0" skipped="0" time="103.386" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.ui.spec.ts" time="95.627">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-chromium-retry1/trace.zip]]
+
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-chromium-retry2/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-chromium-retry3/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="API: SignUp, Create Task | UI: Login, Find a task" classname="api.ui.spec.ts" time="7.759">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Create-Task-UI-Login-Find-a-task-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="chromium" tests="2" failures="0" skipped="0" time="1.792" errors="0">
+<testcase name="basic test without POM" classname="ui.example.spec.ts" time="0.853">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/ui.example-basic-test-without-POM-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Get Started doc intro" classname="ui.example.spec.ts" time="0.939">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/ui.example-Get-Started-doc-intro-chromium/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="a11y.lighthouse.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0.01" errors="0">
+<testcase name="Accessibility test" classname="a11y.lighthouse.spec.ts" time="0.01">
+<properties>
+<property name="skip" value="Still working on it">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api.basic.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="firefox" tests="1" failures="0" skipped="0" time="0.205" errors="0">
+<testcase name="get inventory" classname="api.basic.example.spec.ts" time="0.205">
+</testcase>
+</testsuite>
+<testsuite name="api.data.class.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="firefox" tests="2" failures="0" skipped="0" time="81.167" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.data.class.example.spec.ts" time="78.71">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-firefox-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-firefox-retry1/trace.zip]]
+
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-firefox-retry2/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login UI - Data From JSON" classname="api.data.class.example.spec.ts" time="2.457">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.class.example-Login-UI---Data-From-JSON-firefox/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api.data.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="firefox" tests="2" failures="1" skipped="0" time="8.406" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.data.example.spec.ts" time="4.653">
+<failure message="api.data.example.spec.ts:37:1 API SignUp | Login UI" type="FAILURE">
+<![CDATA[  [firefox] › api.data.example.spec.ts:37:1 › API SignUp | Login UI ────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-firefox-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-firefox-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api.data.example-API-SignUp-Login-UI-firefox-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-firefox-retry2/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-firefox-retry3/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-firefox-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-firefox-retry1/trace.zip]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-firefox-retry2/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-firefox-retry3/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login UI - Data From JSON" classname="api.data.example.spec.ts" time="3.753">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.example-Login-UI---Data-From-JSON-firefox/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api.ui.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="firefox" tests="2" failures="0" skipped="0" time="9.854" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.ui.spec.ts" time="3.9">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-firefox/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="API: SignUp, Create Task | UI: Login, Find a task" classname="api.ui.spec.ts" time="5.954">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Create-Task-UI-Login-Find-a-task-firefox/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="firefox" tests="2" failures="0" skipped="0" time="2.257" errors="0">
+<testcase name="basic test without POM" classname="ui.example.spec.ts" time="1.373">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/ui.example-basic-test-without-POM-firefox/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Get Started doc intro" classname="ui.example.spec.ts" time="0.884">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/ui.example-Get-Started-doc-intro-firefox/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="a11y.lighthouse.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="webkit" tests="1" failures="0" skipped="1" time="0.008" errors="0">
+<testcase name="Accessibility test" classname="a11y.lighthouse.spec.ts" time="0.008">
+<properties>
+<property name="skip" value="Still working on it">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="api.basic.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="webkit" tests="1" failures="0" skipped="0" time="0.38" errors="0">
+<testcase name="get inventory" classname="api.basic.example.spec.ts" time="0.38">
+</testcase>
+</testsuite>
+<testsuite name="api.data.class.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="webkit" tests="2" failures="0" skipped="0" time="6.552" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.data.class.example.spec.ts" time="3.654">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.class.example-API-SignUp-Login-UI-webkit/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login UI - Data From JSON" classname="api.data.class.example.spec.ts" time="2.898">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.class.example-Login-UI---Data-From-JSON-webkit/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api.data.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="webkit" tests="2" failures="1" skipped="0" time="6.185" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.data.example.spec.ts" time="3.167">
+<failure message="api.data.example.spec.ts:37:1 API SignUp | Login UI" type="FAILURE">
+<![CDATA[  [webkit] › api.data.example.spec.ts:37:1 › API SignUp | Login UI ─────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-webkit-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-webkit-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/api.data.example-API-SignUp-Login-UI-webkit-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #2 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-webkit-retry2/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Retry #3 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    Expected: 200
+    Received: 401
+
+      37 | test('API SignUp | Login UI', async ({ page }) => {
+      38 |   const newUserData = await dataContext.get('/users.json');
+    > 39 |   expect(newUserData.status()).toEqual(200);
+         |                                ^
+      40 |   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
+      41 |   // New User
+      42 |   const { username } = userAPIData[0];
+
+        at /Users/rakeshroby/dev/starter-playwright/tests/api.data.example.spec.ts:39:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/api.data.example-API-SignUp-Login-UI-webkit-retry3/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-webkit-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-webkit-retry1/trace.zip]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-webkit-retry2/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.data.example-API-SignUp-Login-UI-webkit-retry3/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login UI - Data From JSON" classname="api.data.example.spec.ts" time="3.018">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.data.example-Login-UI---Data-From-JSON-webkit/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="api.ui.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="webkit" tests="2" failures="0" skipped="0" time="11.443" errors="0">
+<testcase name="API SignUp | Login UI" classname="api.ui.spec.ts" time="5.699">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-webkit-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-webkit-retry1/trace.zip]]
+
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Login-UI-webkit-retry2/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="API: SignUp, Create Task | UI: Login, Find a task" classname="api.ui.spec.ts" time="5.744">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/api.ui-API-SignUp-Create-Task-UI-Login-Find-a-task-webkit/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui.example.spec.ts" timestamp="2023-10-11T17:17:41.083Z" hostname="webkit" tests="2" failures="0" skipped="0" time="1.892" errors="0">
+<testcase name="basic test without POM" classname="ui.example.spec.ts" time="0.767">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/ui.example-basic-test-without-POM-webkit/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Get Started doc intro" classname="ui.example.spec.ts" time="1.125">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/ui.example-Get-Started-doc-intro-webkit/test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
