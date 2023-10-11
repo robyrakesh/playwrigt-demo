@@ -52,4 +52,4 @@ jobs:
       if: always()
       with:
         webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
-        overwrite: "{title: `Automation Test Result : ${steps.test.outcome} Test Report :- https://robyrakesh.github.io/playwrigt-demo/`}"
+        overwrite: "{title: `Automation Test Result : ${{steps.test.outcome}} Test Report :- https://robyrakesh.github.io/playwrigt-demo/`}"
