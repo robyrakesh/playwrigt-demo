@@ -48,6 +48,7 @@ jobs:
           PUBLISH_DIR: allure-history
 
     - name: Post results to Microsoft Teams
+      if: always()
       env:
           WEBHOOK_URL: ${{ secrets.MSTEAMS_WEBHOOK }}
       run: |
