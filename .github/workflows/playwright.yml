@@ -47,9 +47,9 @@ jobs:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
 
-    - name: Microsoft Teams Notification
-      uses: skitionek/notify-microsoft-teams@master
-      if: always()
-      with:
-        webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
-        overwrite: "{title: `Automation Test Result : ${{steps.test.outcome}} Test Report :- https://robyrakesh.github.io/playwrigt-demo/`}"
+    - name: Post results to Microsoft Teams
+      env:
+          WEBHOOK_URL: ${{ secrets.MSTEAMS_WEBHOOK }}
+      run: |
+        message="Spider's Enhancement Test Result: ${{steps.test.outcome}} \n Test Report: https://robyrakesh.github.io/playwrigt-demo/"
+        curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$message\"}" $WEBHOOK_URL
